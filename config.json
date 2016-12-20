@@ -1,0 +1,12 @@
+{
+    "max-concurrent-indexers" : 2,
+    "dbpath" : "data",
+    "repos" : {
+
+        "pm_sn" : {
+            "url" : "git@github.com:townie/gitlab-hound.git",
+            "ms-between-poll": 10000,
+            "exclude-dot-files": true
+        } 
+    }
+}

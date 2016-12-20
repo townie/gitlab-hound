@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+    sync_git:
+        build:
+            context: .
+        restart: always
+        env_file: .env
+        network_mode: 'host'
+        volumes:
+            - './config/:/config'
+        command: python make_config_file.py
+
+    hound:
+        image: etsy/hound
+        ports: 
+            - "6080:6080"
+        volumes:
+           - './config:/data'
+        network_mode: 'host'
